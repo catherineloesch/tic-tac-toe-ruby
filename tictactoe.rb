@@ -41,12 +41,12 @@ class TicTacToe
     end
 
     def turn_count
-        self.board.filter { |i| i != " "}.length
+        self.board.select { |i| i != " "}.length
     end
 
     def current_player
-        x_count = self.board.filter {|i| i == "X"}.length
-        o_count = self.board.filter {|i| i == "O"}.length
+        x_count = self.board.select {|i| i == "X"}.length
+        o_count = self.board.select {|i| i == "O"}.length
         x_count > o_count ? "O" : "X" 
     end
 
@@ -102,5 +102,4 @@ class TicTacToe
 end
 
 game = TicTacToe.new
-
 game.play
